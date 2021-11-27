@@ -48,18 +48,6 @@ class DescriptionFragment : Fragment() {
         binding.tvOverview.text = obj.overview
         binding.tvTxt.text = obj.releaseDate
 
-        initListener()
-    }
-
-    private fun initListener(){
-        binding.fabInfo.setOnClickListener {
-            val compartir = Intent(Intent.ACTION_SEND)
-            compartir.type = "text/plain"
-            val mensaje = "${binding.tvTitle.text} \n ${binding.tvOverview.text} \n ${binding.tvTxt.text}"
-            compartir.putExtra(Intent.EXTRA_SUBJECT, "GSTest")
-            compartir.putExtra(Intent.EXTRA_TEXT, mensaje)
-            startActivity(Intent.createChooser(compartir, "Compartir vía"))
-        }
     }
 
 }
